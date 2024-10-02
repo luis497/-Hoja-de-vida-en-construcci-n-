@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    width: auto;
+    height: 300px;
+    justify-content: center;
+}
+#aviso{
+    font-size: 7rem;
+    color: black;
+}
