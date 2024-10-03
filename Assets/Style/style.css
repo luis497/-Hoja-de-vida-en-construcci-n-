@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Variables */
+:root{
+    --prymari-color: #FFFFFF;
+    --secondary-color: #100303;
+    --tertiary-color: #F7F7F7;
+    --font-size-title-mobile: 2.6rem;
+    --font-size-paragraph-mobile: 1.6rem;
+    --font-size-title-tablet: 3.2rem;
+    --font-size-paragraph-tablet: 1.8rem;
+    --font-size-title-desktop: 3.2rem;
+    --font-size-paragraph-desktop: 1.8rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Montserrat", sans-serif;
+}
+#aviso{
+    font-size: 7rem;
+    color: black;
+}
+/* Estilos con base en mobile */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: var(--prymari-color);
+    width: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+.logo-mobile{
+    color: var(--secondary-color);
+    font-size: var(--font-size-title-mobile);
+    font-weight: 550;
+}
+
+.menu-icon {
+    cursor: pointer;
+    width: 33px;
+    height: 30px;
+}
+.menu-icon img {
+    width: 33px;
+    height: 30px;
+}
+
+.logo-desktop{
+    display: none;
+    color: var(--secondary-color);
+    font-size: var(--font-size-title-desktop);
+    font-weight: 550;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+    background-color: var(--tertiary-color);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 25%;
+    padding: 5px;
+}
+.nav-links li {
+    padding: 10px;
+}
+.nav-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: var(--font-size-paragraph-mobile);
+}
+
+.nav-links li:hover{
+    background-color: var(--prymari-color);
+    color: white;
+}
+/* Cuando se hace click se muestra el menú*/
+.show {
+    display: flex;
+  }
+/* Sección de información y foto */
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 30px;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: linear-gradient(to bottom, #FFFFFF 50%, #100303 50%);
+}
+
+.hero .info h1{
+    font-size: var(--font-size-title-mobile);
+    color: var(--prymari-color);
+}
+
+.hero .info p{
+    font-size: var(--font-size-paragraph-mobile);
+    color: var(--prymari-color);
+}
+
+.hero img{
+    width: 200px;
+    height: 280px;
+}
+
+/* Estilos con base en tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+   .navbar {
+    padding: 15px 35px;
+   }
+   .logo-mobile {
+    font-size: var(--font-size-title-tablet);
+   }
+   .menu-icon img {
+    width: 35px;
+    height: 32px;
+   }
+   .nav-links{
+    display: none;
+    top: 60px;
+    }
+    .nav-links a {
+        font-size: var(--font-size-paragraph-tablet);
+    }
+    .nav-links.show{
+        display: flex;
+    }
+    .hero .info h1{
+        font-size: var(--font-size-title-tablet);
+        color: var(--secondary-color);
+    }
+    .hero .info p{
+        font-size: var(--font-size-paragraph-tablet);
+        color: var(--secondary-color);
+    }
+}
+
+/* Estilos para Desktop */
+@media (min-width: 1025px) {
+    .menu-icon {
+      display: none;
+    }
+    .logo-mobile{
+        display: none;
+    }
+    .logo-desktop {
+      display: block;
+      font-size: var(--font-size-title-desktop);
+    }
+    .nav-links {
+      display: flex;
+      flex-direction: row; 
+      justify-content: center;
+      gap: 20px; 
+      width: auto;
+      position: static; 
+      background-color: transparent; 
+      padding: 0;
+    }
+    .nav-links a {
+        font-size: var(--font-size-paragraph-desktop);
+    }
+  }
