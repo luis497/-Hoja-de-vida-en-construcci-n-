@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* Variables */
 :root{
-    --prymari-color: #FFFFFF;
+    --primary-color: #FFFFFF;
     --secondary-color: #100303;
     --tertiary-color: #F7F7F7;
     --font-size-title-mobile: 2.6rem;
@@ -20,6 +20,9 @@ html {
     font-size: 62.5%;
     font-family: "Montserrat", sans-serif;
 }
+body::-webkit-scrollbar { 
+    display: none;
+}
 #aviso{
     font-size: 7rem;
     color: black;
@@ -30,7 +33,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background-color: var(--prymari-color);
+    background-color: var(--primary-color);
     width: 100%;
     position: fixed; 
     top: 0; 
@@ -69,7 +72,7 @@ html {
     position: absolute;
     top: 50px;
     right: 0;
-    width: 25%;
+    width: 35%;
     padding: 5px;
 }
 .nav-links li {
@@ -82,7 +85,7 @@ html {
 }
 
 .nav-links li:hover{
-    background-color: var(--prymari-color);
+    background-color: var(--primary-color);
     color: white;
 }
 /* Cuando se hace click se muestra el menú*/
@@ -104,15 +107,16 @@ html {
 
 .hero .info h1{
     font-size: var(--font-size-title-mobile);
-    color: var(--prymari-color);
+    color: var(--primary-color);
 }
 
 .hero .info p{
     font-size: var(--font-size-paragraph-mobile);
-    color: var(--prymari-color);
+    color: var(--primary-color);
 }
 
 .hero img{
+    border: 3px solid var(--secondary-color);
     width: 200px;
     height: 280px;
 }
@@ -141,11 +145,14 @@ html {
     }
     .hero .info h1{
         font-size: var(--font-size-title-tablet);
-        color: var(--secondary-color);
+        color: var(--primary-color);
     }
     .hero .info p{
         font-size: var(--font-size-paragraph-tablet);
-        color: var(--secondary-color);
+        color: var(--primary-color);
+    }
+    .hero img{
+        margin-top: 10px;
     }
 }
 
@@ -171,7 +178,20 @@ html {
       background-color: transparent; 
       padding: 0;
     }
+    .nav-links li:hover{
+        background-color: var(--tertiary-color);
+    }
     .nav-links a {
         font-size: var(--font-size-paragraph-desktop);
+    }
+    .hero{
+        flex-direction: row;
+        justify-content: space-around;
+        background: linear-gradient(to right, #FFFFFF 20%, #100303 0%);
+    }
+    .hero img{
+        border: none;
+        width: 300px;
+        height: 410px;
     }
   }
