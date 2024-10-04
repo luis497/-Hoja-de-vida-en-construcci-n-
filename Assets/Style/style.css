@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 #aviso{
-    font-size: 7rem;
+    font-size: 3rem;
     color: black;
 }
 /* Estilos con base en mobile */
