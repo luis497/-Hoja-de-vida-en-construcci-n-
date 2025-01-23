@@ -10,6 +10,10 @@
     --font-size-paragraph-tablet: 1.8rem;
     --font-size-title-desktop: 3.2rem;
     --font-size-paragraph-desktop: 1.8rem;
+    --font-color-about-me: #FFF56D;
+    --background-color-about-me: #7C00FE;
+    --background-color-skills: #344CB7;
+    --font-color-skills: #FFFFFF;
 }
 *{
     margin: 0;
@@ -120,7 +124,44 @@ body::-webkit-scrollbar {
     width: 200px;
     height: 280px;
 }
-
+#about-me{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color-about-me);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--font-color-about-me);
+    padding: 20px;
+}
+#about-me .title-about-me{
+    font-size: var(--font-size-title-mobile);
+    margin-bottom: 30px;
+}
+#about-me .paragraph-about-me{
+    font-size: var(--font-size-paragraph-mobile);
+    margin-left: 30px;
+}
+#skills{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color-skills);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--font-color-skills);
+    padding: 20px;
+}
+#skills .title-skills{
+    font-size: var(--font-size-title-mobile);
+    margin-bottom: 20px;
+}
+#skills .skills-container{
+    font-size: var(--font-size-paragraph-mobile);
+    margin-left: 30px;
+}
 /* Estilos con base en tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
    .navbar {
@@ -154,8 +195,19 @@ body::-webkit-scrollbar {
     .hero img{
         margin-top: 10px;
     }
+    #about-me .title-about-me{
+        font-size: var(--font-size-title-tablet);
+    }
+    #about-me .paragraph-about-me{
+        font-size: var(--font-size-paragraph-tablet);
+    }
+    #skills .title-skills{
+        font-size: var(--font-size-title-tablet);
+    }
+    #skills .skills-container{
+        font-size: var(--font-size-paragraph-tablet);
+    }
 }
-
 /* Estilos para Desktop */
 @media (min-width: 1025px) {
     .menu-icon {
@@ -193,5 +245,17 @@ body::-webkit-scrollbar {
         border: none;
         width: 300px;
         height: 410px;
+    }
+    #about-me .title-about-me{
+        font-size: var(--font-size-title-desktop);
+    }
+    #about-me .paragraph-about-me{
+        font-size: var(--font-size-paragraph-desktop);
+    }
+    #skills .title-skills{
+        font-size: var(--font-size-title-desktop);
+    }
+    #skills .skills-container{
+        font-size: var(--font-size-paragraph-desktop);
     }
   }
