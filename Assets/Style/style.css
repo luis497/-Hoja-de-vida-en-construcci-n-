@@ -14,6 +14,10 @@
     --background-color-about-me: #7C00FE;
     --background-color-skills: #344CB7;
     --font-color-skills: #FFFFFF;
+    --background-color-training:#F5F7F8;
+    --background-color-info-item:#E9EFEC;
+    --background-color-item:#B6FFA1;
+    --font-color-training: #000000;
 }
 *{
     margin: 0;
@@ -49,7 +53,6 @@ body::-webkit-scrollbar {
     font-size: var(--font-size-title-mobile);
     font-weight: 550;
 }
-
 .menu-icon {
     cursor: pointer;
     width: 33px;
@@ -59,14 +62,12 @@ body::-webkit-scrollbar {
     width: 33px;
     height: 30px;
 }
-
 .logo-desktop{
     display: none;
     color: var(--secondary-color);
     font-size: var(--font-size-title-desktop);
     font-weight: 550;
 }
-
 .nav-links {
     display: none;
     flex-direction: column;
@@ -87,7 +88,6 @@ body::-webkit-scrollbar {
     text-decoration: none;
     font-size: var(--font-size-paragraph-mobile);
 }
-
 .nav-links li:hover{
     background-color: var(--primary-color);
     color: white;
@@ -108,17 +108,14 @@ body::-webkit-scrollbar {
     height: calc(100vh - 50px);
     background: linear-gradient(to bottom, #FFFFFF 50%, #100303 50%);
 }
-
-.hero .info h1{
+.hero .info-hero h1{
     font-size: var(--font-size-title-mobile);
     color: var(--primary-color);
 }
-
-.hero .info p{
+.hero .info-hero p{
     font-size: var(--font-size-paragraph-mobile);
     color: var(--primary-color);
 }
-
 .hero img{
     border: 3px solid var(--secondary-color);
     width: 200px;
@@ -162,6 +159,54 @@ body::-webkit-scrollbar {
     font-size: var(--font-size-paragraph-mobile);
     margin-left: 30px;
 }
+#training{
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color-training);
+    padding: 10px;
+}
+#training ul {
+    list-style: none;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+#training .title-training{
+    font-size: var(--font-size-title-mobile);
+    margin:0 0 10px 10px;
+    color: var(--font-color-training);
+}
+#training ul .item {
+    margin-bottom: 10px;
+    height: 10%;
+}  
+#training ul .item .title {
+    background:none;
+    font-weight: bold;
+    color: var(--font-color-training);
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: var(--font-size-paragraph-mobile);
+}  
+#training ul .item .title:hover {
+    background-color: var(--background-color-item); 
+}  
+#training ul .item .info {
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--background-color-info-item);
+    padding: 0 10px;
+    transition: max-height 0.3s ease-out;
+}  
+#training ul .item .info p {
+    margin: 10px 0;
+    font-size: var(--font-size-paragraph-mobile);
+    color: var(--font-color-training);
+} 
 /* Estilos con base en tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
    .navbar {
@@ -184,11 +229,11 @@ body::-webkit-scrollbar {
     .nav-links.show{
         display: flex;
     }
-    .hero .info h1{
+    .hero .info-hero h1{
         font-size: var(--font-size-title-tablet);
         color: var(--primary-color);
     }
-    .hero .info p{
+    .hero .info-hero p{
         font-size: var(--font-size-paragraph-tablet);
         color: var(--primary-color);
     }
@@ -205,6 +250,15 @@ body::-webkit-scrollbar {
         font-size: var(--font-size-title-tablet);
     }
     #skills .skills-container{
+        font-size: var(--font-size-paragraph-tablet);
+    }
+    #training .title-training{
+        font-size:var(--font-size-title-tablet);
+    }
+    #training ul .item .title {
+        font-size: var(--font-size-paragraph-tablet);
+    }
+    #training ul .item .info p {
         font-size: var(--font-size-paragraph-tablet);
     }
 }
@@ -256,6 +310,15 @@ body::-webkit-scrollbar {
         font-size: var(--font-size-title-desktop);
     }
     #skills .skills-container{
+        font-size: var(--font-size-paragraph-desktop);
+    }
+    #training .title-training{
+        font-size:var(--font-size-title-desktop);
+    }
+    #training ul .item .title {
+        font-size: var(--font-size-paragraph-desktop);
+    }
+    #training ul .item .info p {
         font-size: var(--font-size-paragraph-desktop);
     }
   }
